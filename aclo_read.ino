@@ -18,12 +18,12 @@ void postMeasurment(float measurmnent){
   
   while (p.available() > 0) {
     char c = p.read();
-    Serial.print(c);
+//    Serial.print(c);
   }
 
-  Serial.println();
-  Serial.print(p.exitValue());
-  Serial.println();
+//  Serial.println();
+//  Serial.print(p.exitValue());
+//  Serial.println();
 
   delay(200);
 }
@@ -34,9 +34,9 @@ void postMeasurment(float measurmnent){
 void setup(){
   pinMode(led, OUTPUT);     
   Bridge.begin();
-  Serial.begin(9600);
+//  Serial.begin(9600);
   
-  while(!Serial); // wait for a serial connection 
+//  while(!Serial); // wait for a serial connection 
 }
 
 
@@ -75,7 +75,7 @@ void loop()
     digitalWrite(led, HIGH);
     delay(500);
     float measuere = blink_and_mesure(3000,measure_freq);
-    Serial.print(measuere);    
+ //   Serial.print(measuere);    
     postMeasurment(measuere);
 
   } 
